@@ -31,16 +31,6 @@ import {
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6"; // using react-icons for colors
-
-import {
-  Timeline,
-  TimelineContent,
-  TimelineHeader,
-  TimelineIndicator,
-  TimelineItem,
-  TimelineSeparator,
-  TimelineTitle,
-} from "@/components/ui/timeline";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 const techs = [
   { name: "HTML", icon: <SiHtml5 className="text-orange-500" /> },
@@ -216,51 +206,52 @@ const Index = () => {
             ))}
           </div>
         </section>
-
-        {/* Experience Timeline */}
         <section className="space-y-8">
+          {/* Section Header */}
           <h2 className="text-2xl font-semibold text-foreground flex items-center gap-2">
             <Briefcase className="w-6 h-6 text-primary" />
             Experience
           </h2>
-          <Timeline defaultValue={3}>
+
+          {/* Timeline Container */}
+          <div className="relative border-l border-border pl-6 ml-3 space-y-8">
             {experiences.map((exp) => (
-              <TimelineItem key={exp.id} step={exp.id}>
-                <TimelineHeader className="flex items-start gap-4">
-                  <TimelineSeparator className="mt-2" />
-                  <div className="flex flex-col sm:flex-row sm:justify-between w-full">
-                    <div>
-                      <TimelineTitle className="text-lg font-semibold text-card-foreground">
-                        {exp.title}
-                      </TimelineTitle>
-                      <p className="text-primary font-medium">{exp.company}</p>
-                    </div>
-                    <div className="flex flex-col sm:items-end text-sm text-muted-foreground">
-                      <span className="flex items-center gap-1">
-                        <Calendar className="w-3 h-3" />
-                        {exp.date}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <MapPin className="w-3 h-3" />
-                        {exp.location}
-                      </span>
-                    </div>
+              <div key={exp.id} className="relative">
+                {/* Content */}
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                  {/* Left Side - Title & Company */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-card-foreground">
+                      {exp.title}
+                    </h3>
+                    <p className="font-medium text-primary">{exp.company}</p>
                   </div>
-                  <TimelineIndicator className="mt-2" />
-                </TimelineHeader>
-                <TimelineContent className="mt-3">
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    {exp.description.map((point, i) => (
-                      <li key={i} className="flex gap-2">
-                        <span className="text-primary mt-[3px]">•</span>
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </TimelineContent>
-              </TimelineItem>
+
+                  {/* Right Side - Date & Location */}
+                  <div className="flex flex-col sm:items-end text-sm text-muted-foreground">
+                    <p className="flex items-center gap-1">
+                      <Calendar size={15} />
+                      {exp.date}
+                    </p>
+                    <p className="flex items-center gap-1">
+                      <MapPin size={15} />
+                      {exp.location}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                  {exp.description.map((point, i) => (
+                    <li key={i} className="flex gap-2">
+                      <span className="text-primary mt-[3px]">•</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </Timeline>
+          </div>
         </section>
 
         {/* Projects */}
