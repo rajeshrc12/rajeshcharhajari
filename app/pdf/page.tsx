@@ -10,7 +10,7 @@ const PdfPage = () => {
       >
         <p>
           Your browser doesnt support PDFs.
-          <a href="/myfile.pdf" className="text-blue-500 underline">
+          <a href="resume.pdf" className="text-blue-500 underline">
             Download PDF
           </a>
         </p>
