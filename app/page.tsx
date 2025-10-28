@@ -134,7 +134,7 @@ const links = [
   },
   {
     name: "Resume",
-    href: "https://rajeshcharhajari.site/pdf",
+    href: "/resume",
     color: "text-emerald-500",
     icon: <File className="w-4 h-4" />,
   },
