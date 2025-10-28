@@ -32,6 +32,8 @@ import {
 import { FaAws } from "react-icons/fa";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6"; // using react-icons for colors
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import GitHubCalendar from "react-github-calendar";
+
 const techs = [
   { name: "HTML", icon: <SiHtml5 className="text-orange-500" /> },
   { name: "CSS", icon: <SiCss3 className="text-blue-500" /> },
@@ -253,7 +255,20 @@ const Index = () => {
             ))}
           </div>
         </section>
-
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-foreground">
+            GitHub Contributions
+          </h2>
+          <div className="p-4 bg-card border border-border rounded-lg overflow-x-auto">
+            <GitHubCalendar
+              username="rajeshrc12"
+              blockSize={12}
+              blockMargin={5}
+              fontSize={14}
+              colorScheme="light"
+            />
+          </div>
+        </section>
         {/* Projects */}
         <section>
           <h2 className="text-2xl font-semibold text-foreground flex items-center gap-2">
