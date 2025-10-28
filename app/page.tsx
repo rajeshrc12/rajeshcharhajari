@@ -7,9 +7,7 @@ import {
   MapPin,
   Sparkles,
   Mail,
-  Github,
-  Linkedin,
-  Twitter,
+  File,
 } from "lucide-react";
 import {
   SiHtml5,
@@ -32,6 +30,8 @@ import {
   SiLangchain,
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6"; // using react-icons for colors
+
 import {
   Timeline,
   TimelineContent,
@@ -106,6 +106,39 @@ const experiences = [
     ],
   },
 ];
+
+const links = [
+  {
+    name: "Email",
+    href: "mailto:rajesh.charhajari@gmail.com",
+    color: "text-red-500",
+    icon: <Mail className="w-4 h-4" />,
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/rajeshrc12",
+    color: "text-gray-900 dark:text-gray-100",
+    icon: <FaGithub className="w-4 h-4" />,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/rajeshcharhajari",
+    color: "text-blue-600",
+    icon: <FaLinkedin className="w-4 h-4" />,
+  },
+  {
+    name: "Twitter",
+    href: "https://twitter.com/rajescharhajari",
+    color: "text-sky-500",
+    icon: <FaXTwitter className="w-4 h-4" />,
+  },
+  {
+    name: "Resume",
+    href: "https://rajeshcharhajari.site/pdf",
+    color: "text-emerald-500",
+    icon: <File className="w-4 h-4" />,
+  },
+];
 const Index = () => {
   return (
     <main className="min-h-screen bg-background py-12 px-6 md:py-20">
@@ -133,35 +166,16 @@ const Index = () => {
 
           {/* Contact Links */}
           <div className="flex flex-wrap justify-center sm:justify-start gap-3">
-            {["Email", "GitHub", "LinkedIn", "Twitter"].map((platform) => (
+            {links.map(({ name, href, color, icon }) => (
               <a
-                key={platform}
-                href={
-                  platform === "Email"
-                    ? "mailto:rajesh.charhajari@gmail.com"
-                    : platform === "GitHub"
-                    ? "https://github.com/rajeshrc12"
-                    : platform === "LinkedIn"
-                    ? "https://linkedin.com/in/rajeshcharhajari"
-                    : "https://twitter.com/rajescharhajari"
-                }
+                key={name}
+                href={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-3 py-2 bg-card border border-border rounded-lg hover:border-primary transition-colors text-sm font-medium"
               >
-                {platform === "Email" && (
-                  <Mail className="w-4 h-4 text-primary" />
-                )}
-                {platform === "GitHub" && (
-                  <Github className="w-4 h-4 text-primary" />
-                )}
-                {platform === "LinkedIn" && (
-                  <Linkedin className="w-4 h-4 text-primary" />
-                )}
-                {platform === "Twitter" && (
-                  <Twitter className="w-4 h-4 text-primary" />
-                )}
-                <span>{platform}</span>
+                <span className={`${color}`}>{icon}</span>
+                <span>{name}</span>
               </a>
             ))}
           </div>
