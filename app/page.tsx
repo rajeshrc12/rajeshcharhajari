@@ -275,24 +275,22 @@ const Index = () => {
             <Sparkles className="w-6 h-6 text-primary" />
             Projects
           </h2>
-
-          {/* Zepr Project Card */}
           <div className="py-6">
             <div>
-              {/* Project Title and Description */}
+              {/* Project Title */}
               <div>
                 <h3 className="text-xl font-semibold text-card-foreground mb-2">
-                  Zepr - AI Data Analyst
+                  Plausio - Video Sharing Platform
                 </h3>
               </div>
 
               {/* Project Description */}
               <ul className="space-y-2 text-sm text-muted-foreground mb-4">
                 {[
-                  "Built an AI-powered data analyst platform designed to simplify data exploration for non-technical users.",
-                  "Developed features to import CSV datasets and auto-generate SQL queries and interactive charts.",
-                  "Integrated AI-driven summarization to provide actionable insights, aiding users in faster business decisions.",
-                  "Optimized for scalability with a modern stack, ensuring smooth handling of large datasets and real-time query execution.",
+                  "Built a full-stack video sharing platform with support for video uploads, thumbnails, metadata, likes, comments, shares, and channel subscriptions.",
+                  "Implemented HLS (HTTP Live Streaming) using FFmpeg to transcode uploaded videos into segmented .ts files and an .m3u8 playlist, enabling faster startup and adaptive video streaming.",
+                  "Developed channel analytics including subscriber count, total videos, total views, and a personalized subscription management system.",
+                  "Designed a scalable cloud-based architecture using AWS S3 for storage, AWS SQS for asynchronous video processing, AWS EC2 for backend services, and AWS CloudFront for low-latency content delivery.",
                 ].map((desc, idx) => (
                   <li key={idx}>
                     <span className="text-primary mx-[3px]">•</span>
@@ -304,23 +302,25 @@ const Index = () => {
               {/* Project Links */}
               <div className="flex items-center gap-2">
                 <a
-                  href="https://zepr.live"
+                  href="https://plausio.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-primary hover:underline transition-colors"
                 >
                   <Globe className="w-4 h-4" />
-                  Live: zepr.live
+                  Live: plausio.vercel.app
                   <ExternalLink className="w-3 h-3" />
                 </a>
+
                 <span className="text-sm text-muted-foreground">|</span>
+
                 <a
-                  href="https://github.com/rajeshrc12/zepr"
+                  href="https://github.com/rajeshrc12/plausio"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-primary hover:underline transition-colors"
                 >
-                  <Globe className="w-4 h-4" />
+                  <FaGithub className="w-4 h-4" />
                   Code
                   <ExternalLink className="w-3 h-3" />
                 </a>
