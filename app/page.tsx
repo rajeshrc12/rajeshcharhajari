@@ -147,11 +147,11 @@ const Index = () => {
 
             {/* Intro */}
             <div className="space-y-3">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground tracking-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight">
                 Hi, I am <span className="text-primary">Rajesh Charhajari</span>
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground">
-                Full Stack GenAI Developer
+                Software Engineer
               </p>
             </div>
           </div>
@@ -180,10 +180,20 @@ const Index = () => {
             About
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            Full-stack software engineer with experience building scalable web
-            applications. Passionate about creating efficient, user-friendly
-            solutions and exploring new technologies. Currently focused on
-            AI-powered data analytics and modern web development.
+            Lowkey obsessed with building scalable, high-performance apps{" "}
+            <img
+              src="https://web.whatsapp.com/emoji/v1/16/0/2/single/w/40/01f680.png"
+              alt="🚀"
+              className="inline-block w-5 h-5 align-text-bottom mx-1"
+              draggable={false}
+            />
+            and occasionally breaking prod in the name of experiments
+            <img
+              src="https://web.whatsapp.com/emoji/v1/16/0/2/single/w/40/01f62d.png"
+              alt="😭"
+              className="inline-block w-5 h-5 align-text-bottom ml-1"
+              draggable={false}
+            />
           </p>
         </section>
 
